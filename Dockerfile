@@ -16,6 +16,7 @@ COPY .mvn/ codebase/src/.mvn
 COPY mvnw mvnw.cmd pom.xml codebase/
 
 WORKDIR /app/codebase
+RUN mkdir logs
 
 # build & package
 RUN mvn clean install compile package
