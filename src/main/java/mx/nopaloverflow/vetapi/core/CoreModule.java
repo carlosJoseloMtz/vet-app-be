@@ -18,8 +18,6 @@ import static java.util.Optional.ofNullable;
 
 public class CoreModule extends AbstractModule {
     private static final Logger LOG = LoggerFactory.getLogger(CoreModule.class);
-
-    private static final String DEFAULT_DRIVER = "mysql";
     private static final String DEFAULT_HOSTNAME = "localhost";
     private static final String DEFAULT_PORT = "3306";
     private static final String DEFAULT_DB_NAME = "vet_db";
@@ -49,7 +47,7 @@ public class CoreModule extends AbstractModule {
 
         final var url = "jdbc:mysql://" + hostName + ":" + port + "/" + dbName;
 
-        LOG.info("Using jdbc connection [{}]", url);
+        LOG.debug("Using jdbc connection [{}]", url);
 
         final var dbType = new MysqlDatabaseType();
         return new JdbcPooledConnectionSource(url, username, password, dbType);

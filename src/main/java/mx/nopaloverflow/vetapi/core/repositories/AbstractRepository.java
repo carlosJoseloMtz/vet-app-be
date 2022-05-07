@@ -5,7 +5,6 @@ import com.j256.ormlite.dao.DaoManager;
 import com.j256.ormlite.support.ConnectionSource;
 import mx.nopaloverflow.vetapi.core.entities.BaseEntity;
 import mx.nopaloverflow.vetapi.core.exceptions.SystemException;
-import mx.nopaloverflow.vetapi.customers.entities.CustomerEntity;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

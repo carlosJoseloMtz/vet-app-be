@@ -13,6 +13,7 @@ import mx.nopaloverflow.vetapi.customers.handlers.CustomerHandler;
 import mx.nopaloverflow.vetapi.customers.handlers.PetHandler;
 import mx.nopaloverflow.vetapi.users.UsersModule;
 import mx.nopaloverflow.vetapi.users.handlers.UsersHandler;
+import org.apache.log4j.BasicConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -2,6 +2,7 @@ package mx.nopaloverflow.vetapi.customers;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
+import com.google.inject.Singleton;
 import com.google.inject.name.Named;
 import com.j256.ormlite.support.ConnectionSource;
 import mx.nopaloverflow.vetapi.customers.dtos.CustomerDto;
@@ -42,6 +43,7 @@ public class CustomersModule extends AbstractModule {
 
     @Provides
     @Named("customerRepository")
+    @Singleton
     CustomerRepository customerRepository(@Named("connectionSource") final ConnectionSource connectionSource) {
         return new DefaultCustomerRepository(connectionSource);
     }
