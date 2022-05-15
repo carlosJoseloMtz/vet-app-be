@@ -80,4 +80,17 @@ public class DefaultUserService implements UserService {
 
         return userRepository.create(registration);
     }
+
+    @Override
+    public void updateUser(final Long id, final UserDto user) {
+        final var pk = userRepository.findById(id)
+                .map(UserEntity::getEntityPk)
+                .orElseThrow(() -> new EntityNotFoundException(
+                        String.format("User [%d] does not exist", id)));
+
+        final var updatedEntity = modelMapper.map(user, UserEntity.class);
+        updatedEntity.setEntityPk(pk);
+
+        userRepository.update(updatedEntity);
+    }
 }

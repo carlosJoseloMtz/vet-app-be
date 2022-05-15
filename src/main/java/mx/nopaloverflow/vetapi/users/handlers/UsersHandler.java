@@ -50,4 +50,12 @@ public class UsersHandler {
             ctx.json(new ServiceFailedResponse<>("Username or password incorrect"));
         }
     }
+
+    public void updateUser(final Context ctx) {
+        final var user = ctx.bodyAsClass(UserDto.class);
+        final var id = ctx.pathParamAsClass("userId", Long.class);
+
+        userService.updateUser(id.get(), user);
+        ctx.json(new ServiceResponse<>("Entity successfully updated"));
+    }
 }

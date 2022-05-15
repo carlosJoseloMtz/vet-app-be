@@ -10,4 +10,6 @@ public interface UserService {
     UserDto authenticateUser(final String username, final String password) throws InvalidCredentialsException;
 
     Long registerUser(final UserDto user) throws UserAlreadyRegisteredException;
+
+    void updateUser(final Long id, final UserDto user);
 }

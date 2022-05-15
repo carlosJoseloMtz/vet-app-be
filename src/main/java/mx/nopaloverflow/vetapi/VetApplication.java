@@ -89,6 +89,7 @@ public class VetApplication {
                 Key.get(UsersHandler.class, named("usersHandler")));
         app.post("/authenticate", usersHandler::login);
         app.post("/users", usersHandler::registerUser);
+        app.put("/users/{userId}", usersHandler::updateUser);
     }
 
     static void bindCustomersAPI(final Javalin app, final Injector injector) {
